@@ -1,0 +1,39 @@
+{
+  "name": "light-spinner",
+  "version": "0.1.1",
+  "description": "light-spinner",
+  "keywords": [
+    "spinner",
+    "light",
+    "minimal",
+    "cli",
+    "no-dependencies"
+  ],
+  "typings": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "files": ["dist"],
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tslint -c tslint.json 'src/**/*.ts' & tsc --build",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "minify": "uglifyjs --compress --mangle --output index.min.js -- ./dist/index.js"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.0.0",
+    "jest": "^26.0.0",
+    "ts-jest": "^26.0.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3",
+    "uglify-js": "^3.6.0"
+  },
+  "jest": {
+    "testTimeout": 1000000,
+    "preset": "ts-jest"
+  },
+  "dependencies": {},
+  "author": "echosoar",
+  "license": "MIT"
+}
