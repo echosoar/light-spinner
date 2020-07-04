@@ -1,8 +1,18 @@
-# light spinner
+<p align="center">
+  <br/>
+  <br/>
+  <b>light spinner</b>
+  <br />
+  <br />
+  <span>This is a no-dependencies minimal cli spinners, only 1KB.
+Written by TypeScript.</span>
+  <br />
+  <br />
+  <span><a href="https://www.npmjs.org/package/light-spinner"><img src="https://img.shields.io/npm/v/light-spinner.svg?style=flat" alt="npm"></a> </span>
+  <br />
+  <br/>
+</p>
 
-This is a no-dependencies minimal cli spinners, only 1KB.
-
-Written by TypeScript.
 
 ![effect](./light-spinner.gif)
 ## Install
