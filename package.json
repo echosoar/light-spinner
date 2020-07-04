@@ -1,6 +1,6 @@
 {
   "name": "light-spinner",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "light-spinner",
   "keywords": [
     "spinner",
@@ -9,6 +9,10 @@
     "cli",
     "no-dependencies"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/echosoar/light-spinner.git"
+  },
   "typings": "dist/index.d.ts",
   "main": "dist/index.js",
   "files": ["dist"],
