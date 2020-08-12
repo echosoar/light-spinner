@@ -1,4 +1,4 @@
-const spinClass = require('./dist');
+const spinClass = require('../dist');
 (async () => {
   const spin = new spinClass.default({
     text: 'test',
