@@ -21,7 +21,7 @@
 </p>
 
 
-![effect](https://raw.githubusercontent.com/echosoar/light-spinner/master/light-spinner.gif)
+![effect](https://raw.githubusercontent.com/echosoar/light-spinner/master/light-spinner-demo.gif)
 ## Install
 ```shell
 $ npm i light-spinner --save
