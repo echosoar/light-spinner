@@ -17,11 +17,12 @@
     </a>
   </span>
   <br />
-  <br/>
+  <br />
+  <img src="https://raw.githubusercontent.com/echosoar/light-spinner/master/spin.gif" />
 </p>
 
 
-![effect](https://raw.githubusercontent.com/echosoar/light-spinner/master/light-spinner-demo.gif)
+
 ## Install
 ```shell
 $ npm i light-spinner --save
