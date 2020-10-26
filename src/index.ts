@@ -19,21 +19,11 @@ export default class LightSpinner {
     this.index = 0;
     clearTimeout(this.timeHandler);
     this.doing();
-    this.hide();
   }
 
   public stop() {
     clearTimeout(this.timeHandler);
     this.clearLine();
-    this.show();
-  }
-
-  public show() {
-    process.stdout.write('\u001b[?25h');
-  }
-
-  private hide() {
-    process.stdout.write('\u001b[?25l');
   }
 
   // https://en.wikipedia.org/wiki/ANSI_escape_code
