@@ -15,9 +15,11 @@ const wait = async (timeout) => {
   
   const list = new Array(100).fill(0);
   for(let i in list) {
+    console.log('test' + Math.random())
     await wait(Math.random() * 100);
     spin.text = `[${ i }/${list.length}] install`;
   }
+  
   spin.text = 'complete!';
   await wait(1000);
   spin.stop();
