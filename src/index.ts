@@ -33,7 +33,9 @@ export default class LightSpinner {
       const message = messageLine.pop();
       const clearChar = '\u001b[2K'; // use 'CSI n K' erase in line : \x01[nK
       const moveCursor = `\u001b[${Buffer.byteLength(message)}D`; // use 'CSI n D' cursor back : \x01[nD
-      process.stdout.write('\u001b[u');
+      if (!this.isWin) {
+        process.stdout.write('\u001b[u');
+      }
       process.stdout.write(clearChar);
       process.stdout.write(moveCursor);
       if (messageLine.length) {
@@ -46,7 +48,9 @@ export default class LightSpinner {
   private output(message: string) {
     this.message = message;
     process.stdout.write(message);
-    process.stdout.write('\u001b[s');
+    if (!this.isWin) {
+      process.stdout.write('\u001b[s');
+    }
   }
 
   private doing() {
