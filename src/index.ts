@@ -54,7 +54,7 @@ export default class LightSpinner {
   }
 
   private doing() {
-    const message = `${this.spinners[this.index ++]} ${this.text || ''}${ this.isWin ? '' : '\n'}`;
+    const message = `${this.spinners[this.index ++]} ${this.text || ''}${ this.isWin ? ' ' : '\n'}`;
     this.clearLine();
     this.output(message);
     if (this.index >= this.spinners.length) {
