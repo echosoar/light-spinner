@@ -27,4 +27,35 @@ describe('/test/index.test.ts', () => {
     clearTimeout(consoleTimeout);
     assert(true);
   });
+
+  it('uses stdout by default', () => {
+    const stdoutWriteSpy = jest.spyOn(process.stdout, 'write');
+
+    const spin = new Spin({
+      text: 'this will go to stdout'
+    });
+
+    spin.start();
+    spin.stop();
+
+    expect(stdoutWriteSpy).toBeCalledWith(expect.stringContaining('this will go to stdout'));
+  });
+
+  describe('when providing a custom stream', () => {
+    it('uses that stream', () => {
+      const stderrWriteSpy = jest.spyOn(process.stderr, 'write');
+      const stdoutWriteSpy = jest.spyOn(process.stdout, 'write');
+
+      const spin = new Spin({
+        text: 'this will go to stderr',
+        stream: process.stderr
+      });
+
+      spin.start();
+      spin.stop();
+
+      expect(stderrWriteSpy).toBeCalledWith(expect.stringContaining('this will go to stderr'));
+      expect(stdoutWriteSpy).not.toBeCalledWith(expect.stringContaining('this will go to stderr'));
+    });
+  });
 });

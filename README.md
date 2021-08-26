@@ -47,6 +47,7 @@ spin.stop();
 | text | string | console text | empty string |
 | timeout | number | the time of changing to next frame | 100(ms) |
 | spinners | string[] | frame list | `['⠋', '⠙', '⠹', '⠼', '⠴', '⠦', '⠧', '⠏']` |
+| stream | WritableStream | the stream to send the output to | stdout |
 
 
 [MIT LICENSE](./LICENSE)

@@ -7,12 +7,14 @@ export default class LightSpinner {
   private spinners;
   private message;
   private timeHandler;
+  private stream: NodeJS.WritableStream;
   private isWin = platform() === 'win32';
   constructor(config?: IOption) {
-    const { spinners, text, timeout } = config || {};
+    const { spinners, text, timeout, stream } = config || {};
     this.spinners = spinners || this.isWin ? ['-', '\\', '/'] : ['⠋', '⠙', '⠹', '⠼', '⠴', '⠦', '⠧', '⠏'];
     this.timeout = timeout || 100;
     this.text = text || '';
+    this.stream = stream || process.stdout;
   }
 
   public start() {
@@ -33,13 +35,13 @@ export default class LightSpinner {
     }
     const clearChar = '\u001b[2K'; // use 'CSI n K' erase in line : \x01[nK
     const moveCursor = `\u001b[${Buffer.byteLength(this.message)}D`; // use 'CSI n D' cursor back : \x01[nD
-    process.stdout.write(clearChar);
-    process.stdout.write(moveCursor);
+    this.stream.write(clearChar);
+    this.stream.write(moveCursor);
   }
 
   private output(message: string) {
     this.message = message;
-    process.stdout.write(message);
+    this.stream.write(message);
   }
 
   private doing() {
